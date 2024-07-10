@@ -10,19 +10,17 @@
         <div class="col-12 col-md-8 col-lg-6 mx-auto"> 
             <div class="input-group input-group-lg"> 
                 <input type="search" id="buscarProd" placeholder="Buscar productos" class="form-control" oninput="buscarProducto()">
-               
             </div>
         </div>
     </div>
-    
-    
+
    <!-- Título de la sección -->
     <div class="row">
         <div class="col-12 text-center">
             <h2 class="display-4">Nuestros productos</h2>
         </div>
     </div>
-    
+
    <!-- Contenedor de productos -->
     <div id="contenedorProductos" class="mt-4">
         {% for producto in productos %}
@@ -39,7 +37,7 @@
                     <input type="text" class="form-control text-center" style="height: 38px;" id="cantidad_{{ producto.id }}" value="1" readonly>
                     <button class="btn btn-outline-secondary" type="button" style="height: 38px;" onclick="incrementar('{{ producto.id }}')">➕</button>
                 </div>
-                
+
                 <div class="btn-group" role="group">
                     <button class="btn btn-primary" onclick="agregarACarrito('{{ producto.id }}')">Agregar al carrito</button>
                     <a href="{% url 'ver_carrito' %}" class="btn btn-success">Ir al carrito</a>
