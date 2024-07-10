@@ -7,7 +7,7 @@
 }
 
 .logo {
-    height: 100px; 
+    height: 200px; 
     width: auto;
     margin-right: 20px; 
 }
@@ -20,11 +20,13 @@
     font-size: 46px;
     color: rgb(196, 181, 181);
     font-family: "Montserrat", sans-serif;
+    text-align: left;
 }
 
 .subtitulo {
     font-size: 28px;
     font-family: 'Cedarville Cursive', cursive;
+    text-align: left;
 }
 
 

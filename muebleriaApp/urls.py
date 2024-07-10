@@ -5,6 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 
+
 urlpatterns = [
     path('', views.template, name='template'),
     path('nosotros/', views.nosotros, name='nosotros'),
@@ -13,4 +14,5 @@ urlpatterns = [
     path('editar_carrito/<int:carrito_id>/', views.editar_carrito, name='editar_carrito'),
     path('eliminar_del_carrito/<int:carrito_id>/', views.eliminar_del_carrito, name='eliminar_del_carrito'),
     path('ver_carrito/', views.ver_carrito, name='ver_carrito'),
+    path('contact_form/', views.contact_view, name='contact_form'),
 ]

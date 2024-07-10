@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Producto , Carrito
+from django.views.decorators.csrf import csrf_protect
+from django.http import HttpResponseRedirect
+
 def template(request):
     return render(request, 'template.html')
 
@@ -40,3 +43,17 @@ def eliminar_del_carrito(request, carrito_id):
 def ver_carrito(request):
     items = Carrito.objects.all()
     return render(request, 'carrito.html', {'carrito': items})
+
+@csrf_protect
+def contact_view(request):
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre')
+        correo = request.POST.get('correo')
+        tel = request.POST.get('tel')
+        asunto = request.POST.get('asunto')
+        mensaje = request.POST.get('mensaje')
+        suscripcion = request.POST.get('suscripcion')
+
+        # Redirigir a una página de éxito o mostrar un mensaje de éxito
+        return HttpResponseRedirect('/gracias/')
+    return render(request, 'contact_form.html')
