@@ -14,7 +14,11 @@ SECRET_KEY = 'django-insecure-&=@mml*l$#_l51f(p1*ap@4y=k&6dyrw%5rgk9px&ahhg9dg+#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'muebleria-estilo-vivo.onrender.com',
+    ]
 
 
 # Application definition
