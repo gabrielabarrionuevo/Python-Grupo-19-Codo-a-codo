@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}Iniciar Sesión{% endblock %}
+
+{% block content %}
+<style>
+    .login-container {
+        background-color: beige;
+        border-radius: 15px;
+        padding: 30px;
+        max-width: 400px;
+        margin: auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .login-container h2 {
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .login-container .alert {
+        color: #e74c3c;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .login-container form {
+        display: flex;
+        flex-direction: column;
+    }
+    .login-container form input[type="text"],
+    .login-container form input[type="password"],
+    .login-container form button {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 12px;
+    }
+    .login-container form button {
+        background-color: #7c5527;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .login-container form button:hover {
+        background-color: #cdbba4;
+    }
+</style>
+
+<div class="login-container">
+    <div class="alert">
+        <i class="fas fa-exclamation-circle"></i> Por favor, ingrese sus credenciales.
+    </div>
+    <h2><i class="fas fa-couch" style="color:rgb(0, 0, 0); margin-right: 10px;"></i>Iniciar Sesión</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            {{ form.username }}
+        </div>
+        <div>
+            {{ form.password }}
+        </div>
+        <button type="submit">Iniciar SesióNNs</button>
+    </form>
+</div>
+{% endblock %}
